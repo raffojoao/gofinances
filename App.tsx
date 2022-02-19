@@ -1,4 +1,4 @@
-import { StatusBar } from "expo-status-bar";
+import { StatusBar } from "react-native";
 import React from "react";
 import { Dashboard } from "./src/screens/Dashboard";
 import { Register } from "./src/screens/Register";
@@ -33,6 +33,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <NavigationContainer>
         <GestureHandlerRootView style={{ flex: 1 }}>
+          <StatusBar barStyle="light-content" />
           <AppRoutes />
         </GestureHandlerRootView>
       </NavigationContainer>
