@@ -160,7 +160,7 @@ export function Resume() {
                   fill: theme.colors.shape,
                 },
               }}
-              labelRadius={50}
+              labelRadius={100}
             />
           </ChartContainer>
 

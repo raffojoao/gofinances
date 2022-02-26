@@ -18,6 +18,10 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "intl";
 import "intl/locale-data/jsonp/pt-BR";
 
+import { SignIn } from "./src/screens/SignIn";
+
+import { AuthProvider } from "./src/hooks/auth";
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
@@ -34,7 +38,10 @@ export default function App() {
       <NavigationContainer>
         <GestureHandlerRootView style={{ flex: 1 }}>
           <StatusBar barStyle="light-content" />
-          <AppRoutes />
+          <AuthProvider>
+            {/* <AppRoutes /> */}
+            <SignIn />
+          </AuthProvider>
         </GestureHandlerRootView>
       </NavigationContainer>
     </ThemeProvider>
