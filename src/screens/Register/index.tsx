@@ -21,6 +21,7 @@ import {
   TransactionsTypes,
 } from "./styles";
 import { CategorySelect } from "../CategorySelect";
+import { useAuth } from "../../hooks/auth";
 
 // interface FormData {
 //   name: string;
@@ -45,6 +46,7 @@ export function Register() {
     key: "category",
     name: "Categoria",
   });
+  const { user } = useAuth();
 
   const {
     control,
@@ -76,14 +78,6 @@ export function Register() {
       return Alert.alert("Selecione uma categoria");
     }
 
-    // if (!form.name) {
-    //   return Alert.alert("Informe o nome da transação");
-    // }
-
-    // if (!form.amount) {
-    //   return Alert.alert("Informe o preço");
-    // }
-
     const newTransaction = {
       id: String(uuid.v4()),
       name: form.name,
@@ -94,7 +88,7 @@ export function Register() {
     };
 
     try {
-      const dataKey = "@gofinances:transactions";
+      const dataKey = `@gofinances:transactions_user:${user.id}`;
 
       const data = await AsyncStorage.getItem(dataKey);
       const currentData = data ? JSON.parse(data) : [];
