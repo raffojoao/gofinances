@@ -5,7 +5,7 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "clean": "rm -rf node_modules && yarn cache clean && yarn install && cd ios && rm -rf Podfile.lock && pod install && cd .."
+    "test": "jest"
   },
   "dependencies": {
     "@expo-google-fonts/poppins": "^0.2.2",
