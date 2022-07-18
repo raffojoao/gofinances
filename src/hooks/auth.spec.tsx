@@ -16,7 +16,7 @@ describe("Auth hook tests", () => {
   it("should be able to sign in with existing google account", async () => {
     global.fetch = jest.fn(() => Promise.resolve({
       json: () => Promise.resolve({
-        id: `userInfo.od`,
+        id: `userInfo.id`,
         email: 'userInfo,email',
         name: 'userInfo.name',
         photo: 'userInfo.photo',
